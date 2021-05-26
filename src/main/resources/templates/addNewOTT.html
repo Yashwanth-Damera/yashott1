@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+
+        <style>
+            .home{
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        </style>
+        <title>Add New OTT</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a  href="home">Home</a>
+            <a class="active" href="addOTT">Add new OTT Platform</a>
+            <a href="addMovie">Add Movies</a>
+            <a href="addGenreType">Add new Genre Types</a>
+            <a href="viewModifyDelete">View Movies</a>
+            <a href="OTTPrice">View OTT Prices</a>
+            <a href="GenreType">Available Genre Types</a>
+        </div>
+        <div class="container">
+
+
+            <h2>Add New OTT</h2>
+            <form th:action="OTTAdded">
+                <div class="form-group col-md-6">
+                    <label>Enter ID</label>
+                    <input type="number" name="OTTId" class="form-control" placeholder="Enter OTT ID" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Enter Name</label>
+                    <input type="text" name="OTTName" class="form-control" placeholder="Enter OTT Name">
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label>Enter Price</label>
+                    <input type="number" name="price" step="0.1" class="form-control" placeholder="Enter OTT Price">
+                </div>
+                
+               
+                
+                <button type="submit" class="btn btn-primary">Click to add OTT</button>
+
+            </form>
+            <br/>
+             <form th:action="cancel">
+                <button type="Cancel" class="btn btn-danger">Cancel</button>
+            </form>
+            
+
+        </div>
+
+
+    </body>
+</html>
